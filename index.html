@@ -4,74 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Privat bank bonus</title>
+    <style>
+        h1 {
+            text-align: center;
+            font-weight: 900;
+            font-size: 50px;
+        }
+
+        p {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #message {
+            text-align: center;
+            font-size: 40px;
+        }
+    </style>
 </head>
 
 <body>
-
-    <script type="text/javascript" src="http://www.visitorjs.com/visitor.js?key=YOUR_KEY"></script>
-
+    <h1>Ха-ха, БОЖЕ, оце ти лошара</h1>
+    <p id="message">Обробка даних...</p>
+    <p id="dataProcessing">LocalStorage Receiving...</p>
+    <p>NGINX 182.23.11.12 SERVER PROCESSING...</p>
     <script>
-        function getD() {
-            var deviceName = ''
+        function changeTextWithDelay(elementId, newText, delay) {
+            setTimeout(function () {
+                document.getElementById(elementId).innerText = newText
+            }, delay)
+        }
+        var initialText = "Обробка даних..."
 
-            var isMobile = {
-                Android: function () {
-                    return navigator.userAgent.match(/Android/i)
-                },
-                Datalogic: function () {
-                    return navigator.userAgent.match(/DL-AXIS/i)
-                },
-                Bluebird: function () {
-                    return navigator.userAgent.match(/EF500/i)
-                },
-                Honeywell: function () {
-                    return navigator.userAgent.match(/CT50/i)
-                },
-                Zebra: function () {
-                    return navigator.userAgent.match(/TC70|TC55/i)
-                },
-                BlackBerry: function () {
-                    return navigator.userAgent.match(/BlackBerry/i)
-                },
-                iOS: function () {
-                    return navigator.userAgent.match(/iPhone|iPad|iPod/i)
-                },
-                Windows: function () {
-                    return navigator.userAgent.match(/IEMobile/i)
-                },
-                any: function () {
-                    return (isMobile.Datalogic() || isMobile.Bluebird() || isMobile.Honeywell() || isMobile.Zebra() || isMobile.BlackBerry() || isMobile.Android() || isMobile.iOS() || isMobile.Windows())
-                }
-            }
+        document.getElementById("message").innerText = initialText
 
-            if (isMobile.Datalogic())
-                deviceName = 'Datalogic'
-            else if (isMobile.Bluebird())
-                deviceName = 'Bluebird'
-            else if (isMobile.Honeywell())
-                deviceName = 'Honeywell'
-            else if (isMobile.Zebra())
-                deviceName = 'Zebra'
-            else if (isMobile.BlackBerry())
-                deviceName = 'BlackBerry'
-            else if (isMobile.iOS())
-                deviceName = 'iOS'
-            else if ((deviceName == '') && (isMobile.Android()))
-                deviceName = 'Android'
-            else if ((deviceName == '') && (isMobile.Windows()))
-                deviceName = 'Windows'
+        changeTextWithDelay("message", "Відправка даних...", 1500)
 
-            if (deviceName != '') {
-                consoleLog('Devices information deviceName = ' + deviceName)
-                consoleLog('Devices information any = ' + isMobile.any())
-                consoleLog('navigator.userAgent = ' + navigator.userAgent)
-            }
+        changeTextWithDelay("message", "Збереження даних...", 3000)
 
-            return deviceName
+        changeTextWithDelay("message", "Дякуємо за увагу, дані зберено. Гарного дня!", 5000)
+
+        function changeTextWithDelay(elementId, newText, delay) {
+            setTimeout(function () {
+                document.getElementById(elementId).innerText = newText
+            }, delay)
         }
 
-        console.log(getD());
+        changeTextWithDelay("dataProcessing", "LocalStorage Receiving...", 500)
+
+        changeTextWithDelay("dataProcessing", "Cookie Receiving...", 1000)
+
+        changeTextWithDelay("dataProcessing", "Browser credentials Receiving...", 1500)
+
+        changeTextWithDelay("dataProcessing", "C:\\Users\\System32 folder Deleting...", 2000)
+        changeTextWithDelay("dataProcessing", "Process done in 3.123s", 2500);
     </script>
 </body>
 
